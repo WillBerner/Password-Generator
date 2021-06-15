@@ -12,3 +12,17 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
+
+
+function generatePassword() {
+
+  var result = prompt("What's your favorite pets name?", "Buddy");
+
+  var length = prompt("How long should the password be?", "Choose between 8-128 characters");
+
+  var charTypes = prompt("What character types do you want to include?");
+
+
+  return result;
+}
