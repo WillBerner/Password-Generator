@@ -1,0 +1,1 @@
+A web-based password generator using JavaScript. Users are prompted for criteria and a random, secrure password is generated from those criteria.
