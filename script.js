@@ -86,7 +86,7 @@ function getUseableChars(userInput) {
   if (lower) { useableChars = useableChars + lowercaseChars; }
   if (upper) { useableChars = useableChars + uppercaseChars; }
   if (numeric) { useableChars = useableChars + numericChars; }
-  if (specialChars) { useableChars = useableChars + specialChars; }
+  if (special) { useableChars = useableChars + specialChars; }
 
   // Return the final string containing all valid chars to build the password from
   return useableChars;
