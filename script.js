@@ -35,15 +35,18 @@ function generatePassword() {
   }
 
   // Get user input for character types. Set to lowercase to compare strings easily.
-  var charTypes = prompt("What types of characters do you want to include?\nPlease list at least one of the following:\nLowercase, Uppercase, Numeric, Special");
+  // var charTypes = prompt("What types of characters do you want to include?\nPlease list at least one of the following:\nLowercase, Uppercase, Numeric, Special");
+
 
 // If user cancels out of the prompt, return to home without displaying anything new
-  if (!charTypes) {
-    return ("");
-  }
+  // if (!charTypes) {
+  //   return ("");
+  // }
 
   // Get a string of all possible chars to use in password generation
-  var useableChars = getUseableChars(charTypes.toLowerCase());
+  // var useableChars = getUseableChars(charTypes.toLowerCase());
+  var useableChars = getUseableChars();
+
 
   // Generate a password using random chars from the string, only to the given length
   var generatedPassword = "";
@@ -56,16 +59,23 @@ function generatePassword() {
 }
 
 // Function to evaluate user's input and return a string with all useable chars for password generation
-function getUseableChars(userInput) {
+function getUseableChars() {
 
   // Declare vars to remember what to include in password generation
   var [lower, upper, numeric, special] = [false, false, false, false];
 
+  lower = confirm("Would you like to include lowercase letters?");
+  upper = confirm("Would you like to include uppercase letters?");
+  numeric = confirm("Would you like to include numeric characters?");
+  special = confirm("Would you like to include special characters?");
+  
+
+
   // Check input string for char types and assign vars accordingly
-  if (userInput.includes('lowercase')) { lower = true; }
-  if (userInput.includes('uppercase')) { upper = true; }
-  if (userInput.includes('numeric')) { numeric = true; }
-  if (userInput.includes('special')) { special = true; }
+  // if (userInput.includes('lowercase')) { lower = true; }
+  // if (userInput.includes('uppercase')) { upper = true; }
+  // if (userInput.includes('numeric')) { numeric = true; }
+  // if (userInput.includes('special')) { special = true; }
 
   // If the user inputs none of the char types, give an error
   if (lower === false && upper === false && numeric === false && special === false) {
